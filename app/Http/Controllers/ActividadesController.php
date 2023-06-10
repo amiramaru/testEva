@@ -56,11 +56,11 @@ class ActividadesController extends Controller
 
     public function edit($id)
     {
-        $actividades = DB::table('cao_fatura')->select('cao_fatura.co_cliente','cao_fatura.co_fatura', 'cao_fatura.co_os', 'cao_obs_cliente.co_usuario')
-        ->join('cao_obs_cliente', 'cao_fatura.co_cliente', '=', 'cao_obs_cliente.co_cliente')
-        ->distinct()->get();//->dd();
+        $actividades = DB::table('cao_os')->select('co_usuario',DB::raw("SUM(co_os) as valor"))
+        ->groupBy('co_usuario')
+        ->get();//->dd();
 
-        $salario =  DB::table('cao_salario')->select('brut_salario')->where('co_usuario','carlos.arruda')->get();//->dd();
+        $salario =  DB::table('cao_salario')->select('brut_salario')->distinct()->get();//->dd();
         
         //$actividad = Actividad::find($id);
         return view('crudActividades.edit')->with('actividades', $actividades)->with('salario', $salario); 

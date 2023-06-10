@@ -203,7 +203,7 @@
     data: {
       //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [{
-        label: 'Consultores',
+        label: 'Custo fixo',
         //data: [12, 19, 3, 5, 2, 3],
         backgroundColor: ['#6bf1ab','#63d69f', '#438c6c', '#509c7f', '#1f794e', '#34444c', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3', '#0D47A1'],
         borderColor: ['black'],
@@ -304,7 +304,7 @@
   });
 
 //////////////////////////////////////Fechs para cargar las graficas con valores de base de datos.//////////////////////////////////////////
-  let url = 'http://127.0.0.1:8000/api/actividades'
+  let url = 'https://www.portarichard.online/api/actividades'
         fetch(url)
             .then( response => response.json() )
             .then( datos => mostrar(datos) )
@@ -321,7 +321,7 @@
             //console.log(myChart.data)
         } 
 
-        let url2 = 'http://127.0.0.1:8000/api/indicadores'
+        let url2 = 'https://www.portarichard.online/api/indicadores'
         fetch(url2)
             .then( response => response.json() )
             .then( datos => mostrar2(datos) )

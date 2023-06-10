@@ -27,7 +27,7 @@
        
             <tr>
                 <td>{{ $item->co_usuario }}</td>
-                <td>{{ $item->co_os-(21*$item->co_os/100) }}</td>
+                <td>{{ $item->valor-(21*$item->valor/100) }}</td>
                 <td>{{ $item2->brut_salario}}</td>
                 
             </tr>
@@ -37,7 +37,7 @@
         </tbody>
         
     </table>
-    <a href="/actividades" class="btn btn-secundary" tabindex="5">Regresar</a>
+    <a href="/actividades" class="btn btn-primary" tabindex="5">Regresar</a>
 @stop
 
 @section('css')
